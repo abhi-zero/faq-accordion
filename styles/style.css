@@ -1,0 +1,199 @@
+@font-face {
+  font-display: swap;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts-3by.pages.dev/work-sans-v19-latin/work-sans-v19-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://fonts-3by.pages.dev/work-sans-v19-latin/work-sans-v19-latin-600.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://fonts-3by.pages.dev/work-sans-v19-latin/work-sans-v19-latin-700.woff2")
+    format("woff2");
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  /* colors */
+  --main-BG: hsl(0, 0%, 100%);
+  --pink: hsl(290, 71%, 40%);
+  --para-bodyBG: hsl(292, 16%, 49%);
+  --heading: hsl(292, 42%, 14%);
+
+  /* Fonts */
+  /* Font family */
+
+  --ff: "Work Sans";
+
+  /* Font size */
+  --fs-100: 1rem;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: url(../assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--para-bodyBG);
+  font-family: var(--ff);
+  color: var(--heading);
+}
+
+.faq-main {
+  min-width: 340px;
+  max-width: 440px;
+  align-self: center;
+  background-color: var(--main-BG);
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-inline: 20px;
+  padding: 20px;
+}
+
+.title{
+  font-size: 32px;
+  font-weight: 700;
+}
+.title::before{
+  content: "";
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  vertical-align: center;
+  background-image: url(../assets/images/icon-star.svg);
+  background-size: cover;
+  margin-right: 20px;
+}
+
+.hero  .ques-ans{
+  margin-block: 20px;
+}
+
+.hero .ques-ans .ques{
+  width:100%;
+  font-size: 16px;
+  font-weight: 600;
+  text-wrap:pretty;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hero .ques-ans .ques:hover{
+  color: var(--pink);
+}
+
+.hero .ques-ans .ques::after{
+  content: url(../assets/images/icon-plus.svg);
+  display: inline-block;
+  align-items: flex-end;
+}
+.hero .ques-ans.active  .ques::after{
+  content: url(../assets/images/icon-minus.svg);
+}
+
+.hero .ques-ans .ans{
+  font-size: 16px;
+  color:var(--para-bodyBG);
+  margin-block: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease,
+           opacity .4s ease;
+}
+
+@media (min-width : 900px){
+
+  body {
+    background-image: url(../assets/images/background-pattern-desktop.svg);
+  }
+
+  .faq-main {
+    max-width: 550px;
+  }
+  
+}
+
