@@ -107,7 +107,21 @@ h6 {
   --ff: "Work Sans";
 
   /* Font size */
+  --fs-200: 2rem;
   --fs-100: 1rem;
+
+  /* Spacing */
+  --space-100: 6.25rem; /* 100px */
+  --space-90: 5.625rem; /* 90px */
+  --space-80: 5rem; /* 80px */
+  --space-70: 4.375rem; /* 70px */
+  --space-60: 3.75rem; /* 60px */
+  --space-50: 3.125rem; /* 50px */
+  --space-40: 2.5rem; /* 40px */
+  --space-30: 1.875rem; /* 30px */
+  --space-20: 1.25rem; /* 20px */
+  --space-10: 0.625rem; /* 10px */
+
 }
 
 body {
@@ -123,38 +137,40 @@ body {
 }
 
 .faq-main {
-  min-width: 340px;
-  max-width: 440px;
+--border-radius: 0.625rem;
+
+  min-width: 21.25rem;    /* 340px */
+  max-width: 27.5rem;     /* 440px */
   align-self: center;
   background-color: var(--main-BG);
-  border-radius: 10px;
-  margin-top: 50px;
-  margin-inline: 20px;
-  padding: 20px;
+  border-radius: var(--border-radius);
+  margin-top: var(--space-50);
+  margin-inline: var(--space-20);
+  padding: var(--space-20);
 }
 
 .title{
-  font-size: 32px;
+  font-size: var(--fs-200);
   font-weight: 700;
 }
 .title::before{
   content: "";
   display: inline-block;
-  height: 24px;
-  width: 24px;
+  height: 1.5rem; /* 24px */
+  width: 1.5rem;
   vertical-align: center;
   background-image: url(../assets/images/icon-star.svg);
   background-size: cover;
-  margin-right: 20px;
+  margin-right: var(--space-20);
 }
 
 .hero  .ques-ans{
-  margin-block: 20px;
+  margin-block: var(--space-20);
 }
 
 .hero .ques-ans .ques{
   width:100%;
-  font-size: 16px;
+  font-size: var(--fs-100);
   font-weight: 600;
   text-wrap:pretty;
   display: flex;
@@ -176,23 +192,24 @@ body {
 }
 
 .hero .ques-ans .ans{
-  font-size: 16px;
+  font-size: var(--fs-100);
   color:var(--para-bodyBG);
-  margin-block: 10px;
+  margin-block: var(--space-10);
   max-height: 0;
   overflow: hidden;
   transition: max-height .4s ease,
            opacity .4s ease;
 }
 
-@media (min-width : 900px){
+
+@media (min-width : 600px){
 
   body {
     background-image: url(../assets/images/background-pattern-desktop.svg);
   }
 
   .faq-main {
-    max-width: 550px;
+    max-width: 34.375rem;   /* 550px */
   }
   
 }
