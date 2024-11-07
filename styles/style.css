@@ -202,7 +202,7 @@ body {
 }
 
 
-@media (min-width : 600px){
+@media (min-width : 37.5rem){
 
   body {
     background-image: url(../assets/images/background-pattern-desktop.svg);
